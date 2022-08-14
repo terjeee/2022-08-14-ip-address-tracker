@@ -1,6 +1,9 @@
 :root {
   --grey: hsl(0, 0%, 59%);
   --dark-grey: hsl(0, 0%, 17%);
+  --font-small: 400;
+  --font-medium: 500;
+  --font-large: 700;
 }
 
 *,
@@ -14,4 +17,61 @@
 body {
   font-size: 62.5%;
   font-family: 'Rubik', sans-serif;
+}
+
+/* -- color -- */
+
+.white {
+  color: white;
+}
+
+.grey {
+  color: var(--grey);
+}
+
+.darkGrey {
+  color: var(--dark-grey);
+}
+
+/* -- text-- */
+
+.fontSm {
+  font-weight: 400;
+}
+
+.fontMed {
+  font-weight: 500;
+}
+
+.fontLar {
+  font-weight: 700;
+}
+
+.alignStart {
+  text-align: start;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignEnd {
+  text-align: end;
+}
+
+/* -- flex -- */
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexCenter {
+  justify-content: center;
+  align-items: center;
 }
