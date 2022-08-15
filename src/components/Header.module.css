@@ -1,7 +1,8 @@
 header {
-  /* nødvendig? */
-  position: relative;
   width: 100%;
+  height: 10rem;
+  position: relative;
+  overflow-y: visible;
 
   background-image: url('../../public/images/pattern-bg.png');
   background-position: center;
@@ -9,7 +10,7 @@ header {
 }
 
 header > div {
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .title {
@@ -20,9 +21,6 @@ header > div {
 }
 
 .ipDetails {
-  position: absolute;
-  transform: translateY(50%);
-
   display: flex;
   flex-direction: row;
   gap: 1rem;
