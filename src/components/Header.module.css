@@ -1,0 +1,40 @@
+header {
+  /* nødvendig? */
+  position: absolute;
+
+  background-image: url('../../public/images/pattern-bg.png');
+  background-position: center;
+  background-size: cover;
+
+  gap: 1rem;
+}
+
+.title {
+  padding: 1.5rem 0 0 0;
+}
+
+.ipDetails {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  border-radius: var(--border-radius);
+  background-color: #fff;
+}
+
+.ipDetails div {
+  padding: 1rem;
+}
+
+h3 {
+  font-size: 0.6rem;
+  font-weight: var(--fontLar);
+  color: var(--grey);
+}
+
+p {
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+}

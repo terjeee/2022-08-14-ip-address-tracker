@@ -14,30 +14,30 @@ function Header() {
   };
 
   return (
-    <header className='flexCol'>
-      <h1>IP Address Tracker</h1>
-      <form className={css.inputField} onSubmit={handleGetLocation}>
-        <input placeholder='...' ref={inputIPAddress}></input>
-        <button type='button'>></button>
+    <header className='flexCol flexCenter'>
+      <h1 className={css.title}>IP Address Tracker</h1>
+      <form onSubmit={handleGetLocation}>
+        <input placeholder='' ref={inputIPAddress}></input>
+        <button type='button'>{'>'}</button>
       </form>
-      <main className={css.ipDetails}>
-        <div className='flexCol'>
+      <section className={css.ipDetails}>
+        <div className='flexCol alignStart'>
           <h3>IP ADDRESS</h3>
-          <p>{}</p>
+          <p>Test{}</p>
         </div>
-        <div>
+        <div className='flexCol alignStart'>
           <h3>LOCATION</h3>
-          <p>{}</p>
+          <p>Test{}</p>
         </div>
-        <div>
+        <div className='flexCol alignStart'>
           <h3>TIME ZONE</h3>
-          <p>{}</p>
+          <p>Test{}</p>
         </div>
-        <div>
+        <div className='flexCol alignStart'>
           <h3>ISP</h3>
-          <p>{}</p>
+          <p>Test{}</p>
         </div>
-      </main>
+      </section>
     </header>
   );
 }
