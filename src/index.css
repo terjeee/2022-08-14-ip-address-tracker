@@ -4,6 +4,7 @@
   --font-small: 400;
   --font-medium: 500;
   --font-large: 700;
+  --border-radius: 0.5rem;
 }
 
 *,
@@ -20,10 +21,6 @@ body {
 }
 
 /* -- color -- */
-
-.white {
-  color: white;
-}
 
 .grey {
   color: var(--grey);
