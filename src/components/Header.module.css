@@ -1,5 +1,5 @@
 header {
-  position: relative;
+  /* position: relative; */
 
   background-image: url('../../public/images/pattern-bg.png');
   background-position: center;
@@ -7,7 +7,7 @@ header {
 }
 
 header > div {
-  width: 90vw;
+  width: 85vw;
   margin: auto;
 }
 
@@ -20,6 +20,8 @@ header > div {
 }
 
 form {
+  display: flex;
+
   width: 100%;
   padding: 1.5rem 0;
 
@@ -27,23 +29,25 @@ form {
 }
 
 form input {
+  width: 100%;
   padding: 0.75rem;
 
   border: none;
   border-radius: 0.75rem 0 0 0.75rem;
-  border-right: none;
 
   font-size: inherit;
   cursor: text;
 }
 
+form input:focus {
+  outline-style: none;
+}
+
 form button {
-  position: absolute;
   padding: 0.75rem 1rem;
 
-  border: none;
+  border: 0.1rem solid black;
   border-radius: 0 0.75rem 0.75rem 0;
-  border-left: none;
 
   background-color: black;
   color: white;
