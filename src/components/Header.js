@@ -17,26 +17,26 @@ function Header() {
     <header>
       <div className='flexCol flexCenter gap'>
         <h1 className={css.title}>IP Address Tracker</h1>
-        <form onSubmit={handleGetLocation}>
+        <form className={css} onSubmit={handleGetLocation}>
           <input placeholder='' ref={inputIPAddress}></input>
           <button type='button'>{'>'}</button>
         </form>
         <section className={css.ipDetails}>
           <div className='flexCol alignStart'>
             <h3>IP ADDRESS</h3>
-            <p>Test{}</p>
+            <p>192.212.174.101{}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>LOCATION</h3>
-            <p>Test{}</p>
+            <p>Brooklyn, NY 10000{}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>TIME ZONE</h3>
-            <p>Test{}</p>
+            <p>UTC -05:00{}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>ISP</h3>
-            <p>Test{}</p>
+            <p>SpaceX Starlink{}</p>
           </div>
         </section>
       </div>
