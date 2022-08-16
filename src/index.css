@@ -72,3 +72,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* -- leaflet -- */
+
+.leaflet-container {
+  height: 100px;
+  width: 100%;
+}

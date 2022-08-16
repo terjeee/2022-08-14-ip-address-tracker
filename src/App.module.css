@@ -1,3 +1,4 @@
 .app {
   min-height: calc(100vh - 0.01px);
+  width: calc(100vw - 0.01);
 }

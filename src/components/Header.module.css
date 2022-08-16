@@ -27,6 +27,8 @@ header > div {
 
   border-radius: var(--border-radius);
   background-color: #fff;
+
+  z-index: 1000;
 }
 
 .ipDetails div {
