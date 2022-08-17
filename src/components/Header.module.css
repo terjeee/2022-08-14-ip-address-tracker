@@ -1,6 +1,4 @@
 header {
-  /* position: relative; */
-
   background-image: url('../../public/images/pattern-bg.png');
   background-position: center;
   background-size: cover;
@@ -57,7 +55,7 @@ form button {
 }
 
 .ipDetails {
-  z-index: 10000;
+  z-index: 1000;
   margin-top: -12.5rem;
 
   display: flex;
