@@ -18,7 +18,7 @@ function Header() {
       <div className='flexCol flexCenter gap'>
         <h1 className={css.title}>IP Address Tracker</h1>
         <form className={css} onSubmit={handleGetLocation}>
-          <input placeholder='' ref={inputIPAddress}></input>
+          <input autoFocus type='text' placeholder='' ref={inputIPAddress}></input>
           <button type='button'>{'>'}</button>
         </form>
         <section className={css.ipDetails}>
