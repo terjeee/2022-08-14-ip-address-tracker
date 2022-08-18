@@ -1,9 +1,11 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { isIP } from 'is-ip';
 
 import css from './Header.module.css';
 
 function Header(props) {
   const inputIPAddress = useRef();
+  const [ipIsValid, setIpIsValid] = useState(true);
 
   const ipAddress = props.location?.ip;
   const city = props.location?.location.city;
@@ -14,11 +16,12 @@ function Header(props) {
 
   const handleGetIP = (event) => {
     event.preventDefault();
+    const inputIP = inputIPAddress.current.value;
 
-    const inputIP = inputIPAddress;
-    console.log(inputIP.current.value);
+    if (!isIP(inputIP)) return setIpIsValid(false);
 
-    // const regexValidIP = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/gi;
+    setIpIsValid(true);
+    return inputIP;
   };
 
   return (
@@ -26,9 +29,10 @@ function Header(props) {
       <div className='flexCol flexCenter gap'>
         <h1 className={css.title}>IP Address Tracker</h1>
         <form onSubmit={handleGetIP}>
-          <input autoFocus type='text' placeholder='...' ref={inputIPAddress}></input>
+          <input autoFocus type='text' placeholder='' ref={inputIPAddress}></input>
           <button>{'>'}</button>
         </form>
+        {!ipIsValid && <p className={css.invalid}>IP Address is invalid.</p>}
         <section className={css.ipDetails}>
           <div className='flexCol alignStart'>
             <h3>IP ADDRESS</h3>
