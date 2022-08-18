@@ -2,10 +2,8 @@ import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Map from './components/Map';
 
-const apiType1 =
-  'https://geo.ipify.org/api/v2/country?apiKey=at_NkfEDFDaVWVJEIOGhDUtTSmBjkv27&ipAddress=';
-const apiType2 =
-  'https://geo.ipify.org/api/v2/country,city?apiKey=at_NkfEDFDaVWVJEIOGhDUtTSmBjkv27&ipAddress=';
+const apiURL =
+  'https://ipgeolocation.abstractapi.com/v1/?api_key=df8591aa1d00430bbf62d60a4951cac9&ip_address=';
 
 function App() {
   const [ip, setIp] = useState(undefined);
@@ -21,12 +19,13 @@ function App() {
   useEffect(() => {
     if (ip === undefined) return;
 
-    fetch(`${''}${ip}`)
+    fetch(`${apiURL}${ip}`)
       .then((response) => {
         if (!response.ok) throw new Error("Couldn't load location");
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         setLocationAquired(true);
         setLocaton(data);
       })
@@ -35,9 +34,13 @@ function App() {
       });
   }, [ip]);
 
+  const handleChangeIP = (ip) => {
+    setIp(ip);
+  };
+
   return (
     <main>
-      <Header location={location} />
+      <Header location={location} toParentIP={handleChangeIP} />
       {locationAquired && <Map location={location} />}
     </main>
   );
