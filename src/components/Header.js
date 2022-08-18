@@ -7,12 +7,20 @@ function Header(props) {
   const inputIPAddress = useRef();
   const [ipIsValid, setIpIsValid] = useState(true);
 
-  const ipAddress = props.location?.ip;
-  const city = props.location?.location.city;
-  const region = props.location?.location.region;
-  const postalCode = props.location?.location.postalCode;
-  const timezone = props.location?.location.timezone;
-  const isp = props.location?.isp;
+  const location = {
+    ip: props.location?.ip_address,
+    city: props.location?.city,
+    region: props.location?.region,
+    postalCode: props.location?.postal_code,
+    country: props.location?.country,
+    timezone: props.location?.timezone.abbreviation,
+    isp: props.location?.connection.isp_name,
+  };
+
+  const displayCityOrCountry =
+    location.city === null
+      ? location.country
+      : `${location.city}, ${location.region} ${location.postalCode}`;
 
   const handleGetIP = (event) => {
     event.preventDefault();
@@ -21,7 +29,8 @@ function Header(props) {
     if (!isIP(inputIP)) return setIpIsValid(false);
 
     setIpIsValid(true);
-    return inputIP;
+    inputIPAddress.current.value = '';
+    props.toParentIP(inputIP);
   };
 
   return (
@@ -36,19 +45,19 @@ function Header(props) {
         <section className={css.ipDetails}>
           <div className='flexCol alignStart'>
             <h3>IP ADDRESS</h3>
-            <p>{ipAddress === undefined ? '-' : ipAddress}</p>
+            <p>{location.ip === undefined ? '-' : location.ip}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>LOCATION</h3>
-            <p>{city === undefined ? '-' : `${city}, ${region} ${postalCode}`}</p>
+            <p>{location.city === undefined ? '-' : displayCityOrCountry}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>TIME ZONE</h3>
-            <p>{timezone === undefined ? '-' : timezone}</p>
+            <p>{location.timezone === undefined ? '-' : location.timezone}</p>
           </div>
           <div className='flexCol alignStart'>
             <h3>ISP</h3>
-            <p>{isp === undefined ? '-' : isp}</p>
+            <p>{location.isp === undefined ? '-' : location.isp}</p>
           </div>
         </section>
       </div>
