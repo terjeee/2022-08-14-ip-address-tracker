@@ -28,7 +28,7 @@ form {
 
 form input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem;
 
   border: none;
   border-radius: 0.75rem 0 0 0.75rem;
@@ -55,7 +55,8 @@ form button {
 }
 
 form button:hover {
-  background-color: ;
+  background-color: #323232;
+  border: 0.1rem solid #323232;
 }
 
 .ipDetails {
