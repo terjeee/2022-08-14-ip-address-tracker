@@ -13,7 +13,7 @@ function Header(props) {
     region: props.location?.region,
     postalCode: props.location?.postal_code,
     country: props.location?.country,
-    timezone: props.location?.timezone.abbreviation,
+    timezone: props.location?.timezone?.abbreviation,
     isp: props.location?.connection.isp_name,
   };
 
