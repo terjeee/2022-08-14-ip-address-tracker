@@ -14,7 +14,7 @@ function Header(props) {
     postalCode: props.location?.postal_code,
     country: props.location?.country,
     timezone: props.location?.timezone?.abbreviation,
-    isp: props.location?.connection.isp_name,
+    isp: props.location?.connection?.isp_name,
   };
 
   const displayCityOrCountry =
