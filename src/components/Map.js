@@ -15,12 +15,22 @@ function Map(props) {
   const [coords, setCoords] = useState([null, null]);
 
   useEffect(() => {
+    setHasCoords(false);
     setCoords([props.location.latitude, props.location.longitude]);
   }, [props]);
 
+  console.log(coords);
+
   useEffect(() => {
-    if (coords[0] === null || coords[1] === null) return setCoords(false);
-    setHasCoords(true);
+    if (
+      coords[0] !== null &&
+      coords[1] !== null &&
+      coords[0] !== undefined &&
+      coords[1] !== undefined
+    )
+      return setHasCoords(true);
+
+    setHasCoords(false);
   }, [coords]);
 
   return (
