@@ -19,8 +19,6 @@ function Map(props) {
     setCoords([props.location.latitude, props.location.longitude]);
   }, [props]);
 
-  console.log(coords);
-
   useEffect(() => {
     if (
       coords[0] !== null &&
@@ -29,9 +27,9 @@ function Map(props) {
       coords[1] !== undefined
     )
       return setHasCoords(true);
-
-    setHasCoords(false);
   }, [coords]);
+
+  console.log('MAP');
 
   return (
     <div className={css.map}>
