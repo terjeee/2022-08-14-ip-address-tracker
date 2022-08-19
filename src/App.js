@@ -12,9 +12,15 @@ function App() {
 
   useEffect(() => {
     fetch('https://api.ipify.org?format=json')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error();
+        return response.json();
+      })
       .then((data) => {
         setIp(data.ip);
+      })
+      .catch((error) => {
+        alert(error);
       });
   }, []);
 
