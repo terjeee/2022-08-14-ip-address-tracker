@@ -7,13 +7,15 @@ const apiURL =
 
 function App() {
   const [ip, setIp] = useState(undefined);
-  const [location, setLocaton] = useState(undefined);
+  const [location, setLocation] = useState(undefined);
   const [locationAquired, setLocationAquired] = useState(false);
 
   useEffect(() => {
     fetch('https://api.ipify.org?format=json')
       .then((response) => response.json())
-      .then((data) => setIp(data.ip));
+      .then((data) => {
+        setIp(data.ip);
+      });
   }, []);
 
   useEffect(() => {
@@ -25,9 +27,8 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        setLocation(data);
         setLocationAquired(true);
-        setLocaton(data);
       })
       .catch((error) => {
         alert(error);
