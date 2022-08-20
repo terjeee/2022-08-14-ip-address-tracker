@@ -44,7 +44,7 @@ function Header(props) {
         {!ipIsValid && <p className={css.invalid}>IP Address is invalid.</p>}
         <section className={css.ipDetails}>
           <div className='flexCol alignStart'>
-            <h3>IP ADDRESS</h3>
+            <h1>IP ADDRESS</h1>
             <p>{location.ip === undefined ? '-' : location.ip}</p>
           </div>
           <div className='flexCol alignStart'>
