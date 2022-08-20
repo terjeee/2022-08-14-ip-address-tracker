@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/2022-08-14-ip-address-tracker/static/css/main.e5bf1981.css",
-    "main.js": "/2022-08-14-ip-address-tracker/static/js/main.e111e51b.js",
+    "main.js": "/2022-08-14-ip-address-tracker/static/js/main.03e7ad98.js",
     "static/media/pattern-bg.png": "/2022-08-14-ip-address-tracker/static/media/pattern-bg.a60a3c85aa8b88aac4b7.png",
     "index.html": "/2022-08-14-ip-address-tracker/index.html",
     "main.e5bf1981.css.map": "/2022-08-14-ip-address-tracker/static/css/main.e5bf1981.css.map",
-    "main.e111e51b.js.map": "/2022-08-14-ip-address-tracker/static/js/main.e111e51b.js.map"
+    "main.03e7ad98.js.map": "/2022-08-14-ip-address-tracker/static/js/main.03e7ad98.js.map"
   },
   "entrypoints": [
     "static/css/main.e5bf1981.css",
-    "static/js/main.e111e51b.js"
+    "static/js/main.03e7ad98.js"
   ]
 }
