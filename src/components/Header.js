@@ -38,12 +38,7 @@ function Header(props) {
       <div className='flexCol flexCenter gap'>
         <h1 className={css.title}>IP Address Tracker</h1>
         <form onSubmit={handleGetIP}>
-          <input
-            autoFocus
-            type='text'
-            placeholder='Look up any IP address'
-            ref={inputIPAddress}
-          ></input>
+          <input autoFocus type='text' placeholder='' ref={inputIPAddress}></input>
           <button>{'>'}</button>
         </form>
         {!ipIsValid && <p className={css.invalid}>IP Address is invalid.</p>}
