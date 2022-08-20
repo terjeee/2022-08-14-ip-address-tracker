@@ -41,7 +41,7 @@ function Header(props) {
           <input
             autoFocus
             type='text'
-            placeholder='Search for any IP address'
+            placeholder='Look up any IP address'
             ref={inputIPAddress}
           ></input>
           <button>{'>'}</button>
