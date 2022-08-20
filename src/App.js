@@ -7,8 +7,9 @@ const apiURL =
 
 function App() {
   const [ip, setIp] = useState(undefined);
-  const [location, setLocation] = useState(undefined);
-  const [locationAquired, setLocationAquired] = useState(false);
+
+  const [location, setLocation] = useState({});
+  const [locationIsValid, setLocationIsValid] = useState(false);
 
   useEffect(() => {
     fetch('https://api.ipify.org?format=json')
@@ -33,8 +34,10 @@ function App() {
         return response.json();
       })
       .then((data) => {
+        if (typeof data.latitude !== 'number' && typeof data.longitude !== 'number') return;
+
         setLocation(data);
-        setLocationAquired(true);
+        setLocationIsValid(true);
       })
       .catch((error) => {
         alert(error);
@@ -48,7 +51,7 @@ function App() {
   return (
     <main>
       <Header location={location} toParentIP={handleChangeIP} />
-      {locationAquired && <Map location={location} />}
+      {locationIsValid && <Map location={location} />}
     </main>
   );
 }
