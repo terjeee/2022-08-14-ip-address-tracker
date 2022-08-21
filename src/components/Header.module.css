@@ -79,6 +79,7 @@ form button:hover {
   text-align: center;
 }
 
+.ipDetails div h1,
 .ipDetails div h3 {
   padding-bottom: 0.25rem;
   font-size: 0.65rem;
@@ -132,6 +133,7 @@ form button:hover {
     border-left: 0.1rem solid var(--grey);
   }
 
+  .ipDetails div h1,
   .ipDetails div h3 {
     font-size: calc(0.65rem + 20%);
     padding-bottom: 0.5rem;
