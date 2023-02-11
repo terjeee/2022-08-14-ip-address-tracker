@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
-import Header from './components/Header';
-import Map from './components/Map';
-
-const apiURL =
-  'https://ipgeolocation.abstractapi.com/v1/?api_key=df8591aa1d00430bbf62d60a4951cac9&ip_address=';
+import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Map from "./components/Map";
 
 function App() {
   const [ip, setIp] = useState(undefined);
@@ -12,7 +9,7 @@ function App() {
   const [locationIsValid, setLocationIsValid] = useState(false);
 
   useEffect(() => {
-    fetch('https://api.ipify.org?format=json')
+    fetch("https://api.ipify.org?format=json")
       .then((response) => {
         if (!response.ok) throw new Error();
         return response.json();
@@ -28,13 +25,13 @@ function App() {
   useEffect(() => {
     if (ip === undefined) return;
 
-    fetch(`${apiURL}${ip}`)
+    fetch(`${process.env.REACT_APP_API}${ip}`)
       .then((response) => {
         if (!response.ok) throw new Error("Couldn't load location");
         return response.json();
       })
       .then((data) => {
-        if (typeof data.latitude !== 'number' && typeof data.longitude !== 'number') return;
+        if (typeof data.latitude !== "number" && typeof data.longitude !== "number") return;
 
         setLocation(data);
         setLocationIsValid(true);
